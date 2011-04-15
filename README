@@ -1,0 +1,20 @@
+This implements the socialflows algorithm for agglomerative clustering of group data.  Used on Mac OS X 10.6... but probably works on others.
+
+Building (Get libs)
+--------
+cd deps
+./fetch.sh
+
+Building
+--------
+make
+
+Running
+-------
+(1) Fetch some mail data
+    ./topo-download --server=imap.gmail.com --folder="[Gmail]/Sent Mail" --save-raw=my-sent.txt --user=me
+(2) Run the algorithm
+    ./topo-basic --entity-raw my-sent.txt --load-raw my-sent.txt --save my-results --save-at=1 --save-at=10 --save-at=25 --save-at=50 --save-groups=1 --save-scores=1 --save-moves=1  --conditionals 
+    
+There are many options which you can see by running the commands with no arguments.
+
